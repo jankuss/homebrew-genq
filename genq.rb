@@ -5,21 +5,21 @@
 class Genq < Formula
   desc ""
   homepage ""
-  version "0.0.6-dev.1"
+  version "0.1.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jankuss/genq/releases/download/0.0.6-dev.1/genq_Darwin_arm64.tar.gz"
-      sha256 "1d43994df6ea793a5813e0ce28498b6d642f77bfde0e066f1bba0cac6c310fd9"
+    if Hardware::CPU.intel?
+      url "https://github.com/jankuss/genq/releases/download/0.1.0/genq_Darwin_x86_64.tar.gz"
+      sha256 "f21e74273ac3dd1d344efe3f19993720a6a9d9ac5b78e60b40272466c7d804f1"
 
       def install
         bin.install "genq"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jankuss/genq/releases/download/0.0.6-dev.1/genq_Darwin_x86_64.tar.gz"
-      sha256 "d449af68001d78cb48579f2d5cd49b61fac400e36cf1ceb5d97aa0e506247675"
+    if Hardware::CPU.arm?
+      url "https://github.com/jankuss/genq/releases/download/0.1.0/genq_Darwin_arm64.tar.gz"
+      sha256 "7a1cf0246a2752e2e7314a4092673b26eceae9acdf7dd5ed9af7623a012cf5dd"
 
       def install
         bin.install "genq"
@@ -29,16 +29,16 @@ class Genq < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jankuss/genq/releases/download/0.0.6-dev.1/genq_Linux_arm64.tar.gz"
-      sha256 "5be295801a7896c42208549472cef85372e0c117824ac1a278f75cd56706bfe6"
+      url "https://github.com/jankuss/genq/releases/download/0.1.0/genq_Linux_arm64.tar.gz"
+      sha256 "84bad675c406cbe56a8bd6f6f123596c7b01b6a51fe04738b9d24d5d9bd0518c"
 
       def install
         bin.install "genq"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jankuss/genq/releases/download/0.0.6-dev.1/genq_Linux_x86_64.tar.gz"
-      sha256 "51a75104b4bff6d65b4b11c68cb693a7457bad1df8c07d231c024f0f3407168f"
+      url "https://github.com/jankuss/genq/releases/download/0.1.0/genq_Linux_x86_64.tar.gz"
+      sha256 "fb36dc71e2b7a9a85c7a1054b11c4864589170e59dc385385c2a2e16239c2b77"
 
       def install
         bin.install "genq"
