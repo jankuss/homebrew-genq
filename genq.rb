@@ -5,21 +5,21 @@
 class Genq < Formula
   desc ""
   homepage ""
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jankuss/genq/releases/download/0.4.0/genq_Darwin_x86_64.tar.gz"
-      sha256 "b337f52cb757f3b945275f638f09df064f18391906816852605072a4c1e8e435"
+      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Darwin_x86_64.tar.gz"
+      sha256 "359bf8f1fdc0d067ca049db527834703ecfe8e29dfa977e91301b9df8da9bdba"
 
       def install
         bin.install "genq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jankuss/genq/releases/download/0.4.0/genq_Darwin_arm64.tar.gz"
-      sha256 "66c1e693c56b54df83707fae3ee50065b31af81d0257fa7d86294bcd9690aac5"
+      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Darwin_arm64.tar.gz"
+      sha256 "b2e567dbae729bf291c61d8b6ec29c0ee19f394af4918aee0197bd8bf893a2a0"
 
       def install
         bin.install "genq"
@@ -29,16 +29,16 @@ class Genq < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/jankuss/genq/releases/download/0.4.0/genq_Linux_x86_64.tar.gz"
-      sha256 "90efb8a8bf07fa16c41aec574f79366137f869f726396e532f438140c54e5cf9"
+      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Linux_x86_64.tar.gz"
+      sha256 "28588a9c8dd562ab1b4a23da83e60a754afd613d8ab425c1c26b3da5b217e3df"
 
       def install
         bin.install "genq"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jankuss/genq/releases/download/0.4.0/genq_Linux_arm64.tar.gz"
-      sha256 "252c5d64db3406ca9e12a442f9c80535a28ce0d41065a154940a5bb418e7acbf"
+      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Linux_arm64.tar.gz"
+      sha256 "f9a7ee85e5ac130c0f7ebc5e77264c0ce7b4e8a268085b13d76f3cde897bc957"
 
       def install
         bin.install "genq"
