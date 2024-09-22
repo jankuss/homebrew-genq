@@ -5,21 +5,21 @@
 class Genq < Formula
   desc ""
   homepage ""
-  version "0.5.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Darwin_x86_64.tar.gz"
-      sha256 "359bf8f1fdc0d067ca049db527834703ecfe8e29dfa977e91301b9df8da9bdba"
+    on_intel do
+      url "https://github.com/jankuss/genq/releases/download/0.5.1/genq_Darwin_x86_64.tar.gz"
+      sha256 "43b0051f9f170a8755d01b143557487d7c0b84253de329b26ef8ea61769d0cab"
 
       def install
         bin.install "genq"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Darwin_arm64.tar.gz"
-      sha256 "b2e567dbae729bf291c61d8b6ec29c0ee19f394af4918aee0197bd8bf893a2a0"
+    on_arm do
+      url "https://github.com/jankuss/genq/releases/download/0.5.1/genq_Darwin_arm64.tar.gz"
+      sha256 "7d2bae65ac8ce4732e4c2c30d5ebb464a999dbe43e616c905dfed5496d6c0bac"
 
       def install
         bin.install "genq"
@@ -28,20 +28,24 @@ class Genq < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Linux_x86_64.tar.gz"
-      sha256 "28588a9c8dd562ab1b4a23da83e60a754afd613d8ab425c1c26b3da5b217e3df"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jankuss/genq/releases/download/0.5.1/genq_Linux_x86_64.tar.gz"
+        sha256 "da1bfd2bdddb3ed6f973910bad7548cd23d315eb7745425594effb5d0bc1b072"
 
-      def install
-        bin.install "genq"
+        def install
+          bin.install "genq"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jankuss/genq/releases/download/0.5.0/genq_Linux_arm64.tar.gz"
-      sha256 "f9a7ee85e5ac130c0f7ebc5e77264c0ce7b4e8a268085b13d76f3cde897bc957"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jankuss/genq/releases/download/0.5.1/genq_Linux_arm64.tar.gz"
+        sha256 "7d9b2312c6210915e9cfc8488052ca5fdd4b74e74d1673fdd80f1c3b7e993dce"
 
-      def install
-        bin.install "genq"
+        def install
+          bin.install "genq"
+        end
       end
     end
   end
